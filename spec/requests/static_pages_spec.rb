@@ -4,23 +4,40 @@ describe "Static pages" do
 
   describe "Home page" do
 
-    it "should have the content 'Sample App'" do
+    it "что-то лежит в странице дом" do
       visit '/static_pages/home'
       expect(page).to have_content('Sample App')
     end
-  end
-    describe "Help page" do
 
-    it "should have the content 'Help'" do
+    it "заголовок дом" do
+      visit '/static_pages/home'
+      expect(page).to have_title("Home")
+    end
+  end
+
+  describe "Help page" do
+
+    it "хэлб самбади хэлб'" do
       visit '/static_pages/help'
       expect(page).to have_content('Help')
     end
+
+    it "хэлб ин тайтле" do
+      visit '/static_pages/help'
+      expect(page).to have_title("Help")
+    end
   end
+
   describe "About page" do
 
-    it "ошибка" do
+    it "эбаут тело" do
       visit '/static_pages/about'
-      expect(page).to have_content('Джигурда!')
+      expect(page).to have_content('About Us')
+    end
+
+    it "эбаут заголовок" do
+      visit '/static_pages/about'
+      expect(page).to have_title("About Us")
     end
   end
 end
